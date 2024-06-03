@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "idea_sort"
+rootProject.name = "sortit"
