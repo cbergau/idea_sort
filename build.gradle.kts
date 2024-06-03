@@ -40,8 +40,4 @@ tasks {
         privateKey.set(System.getenv("PRIVATE_KEY"))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
-
-    publishPlugin {
-        token.set(String(file("token.txt").readBytes()))
-    }
 }
