@@ -1,6 +1,6 @@
 Description
 ===
 
-Simple plain Text Sorter Plugin for IntelliJ IDEA.
+Sort Lines Ascending and Descending.
 
 ![screenshot.png](screenshot.png)
