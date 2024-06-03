@@ -4,9 +4,8 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.command.WriteCommandAction
-import java.util.*
 
-class SortAction : AnAction() {
+abstract class BaseSortLines : AnAction() {
 
     override fun actionPerformed(event: AnActionEvent) {
         val project = event.project
@@ -48,7 +47,8 @@ class SortAction : AnAction() {
             .split("\n".toRegex())
             .dropLastWhile { it.isEmpty() }
             .toTypedArray()
-        Arrays.sort(lines)
+
+        sortLines(lines)
 
         // Join the sorted lines back into a single string
         val sortedText = lines.joinToString("\n")
@@ -60,4 +60,6 @@ class SortAction : AnAction() {
             document.replaceString(startOffset, endOffset, sortedText)
         }
     }
+
+    abstract fun sortLines(lines: Array<String>)
 }

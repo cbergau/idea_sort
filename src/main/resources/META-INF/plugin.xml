@@ -25,8 +25,10 @@
 
     </extensions>
     <actions>
-        <action id="SortAction" class="de.christianbergau.SortAction" text="Sort">
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-        </action>
+        <group id="SortId" text="SortIt" popup="true">
+            <add-to-group group-id="EditorPopupMenu" />
+            <action id="SortLinesAsc" class="de.christianbergau.SortLinesAscAction" text="Lines Ascending" />
+            <action id="SortLinesDesc" class="de.christianbergau.SortLinesDescAction" text="Lines Descending" />
+        </group>
     </actions>
 </idea-plugin>
